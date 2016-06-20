@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using ExampleApp.Infrastructure;
 
 namespace ExampleApp
 {
@@ -9,6 +10,9 @@ namespace ExampleApp
     {
         public static void Register(HttpConfiguration config)
         {
+            // configure Dependency Injection
+            config.DependencyResolver = new NinjectResolver();
+
             // Web API configuration and services
 
             // Web API routes
